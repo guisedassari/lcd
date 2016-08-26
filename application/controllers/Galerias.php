@@ -10,6 +10,19 @@ class Corporativo extends CI_Controller {
         $this->load->view('painel/menus/rodape');
     }
 
+    public function add() {
+        $dados = $this->input->post();
+
+        if ($dados != null) {
+            $this->galerias_model->save();
+            $this->session->set_flashdata("success", "Imagem salva com sucesso");
+            redirect('/');
+        }
+        $this->load->view('painel/menus/cabecalho');
+        $this->load->view('painel/galerias/corporativo/add');
+        $this->load->view('painel/menus/rodape');
+    }
+
     public function Upload() {
         //carrega a biblioteca de upload do CI
         $this->load->library('upload');
