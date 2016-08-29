@@ -13,6 +13,7 @@
         <link href="<?= base_url('assets/vendor/metisMenu/metisMenu.min.css') ?>" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?= base_url('assets/dist/css/sb-admin-2.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('assets/dist/css/my_style.css') ?>" rel="stylesheet">
         <!-- Morris Charts CSS -->
         <link href="<?= base_url('assets/vendor/morrisjs/morris.css') ?>" rel="stylesheet">
         <!-- Custom Fonts -->
@@ -68,30 +69,11 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
+                            
                             <li>
-                                <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> Galeria<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="#">Corporativo <span class="fa arrow"></span></a>
-                                        <ul class="nav nav-third-level">
-                                            <li><a href="corporativo"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Iluminação</a></li>
-                                            <li><a href="#"><i class="fa fa-volume-up" aria-hidden="true"></i> Sonorização</a></li>
-                                            <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"></i> Imagem</a></li>
-                                            <li><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> Energia</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Social <span class="fa arrow"></span></a>
-                                        <ul class="nav nav-third-level">
-                                            <li><a href="#"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Iluminação</a></li>
-                                            <li><a href="#"><i class="fa fa-volume-up" aria-hidden="true"></i> Sonorização</a></li>
-                                            <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"></i> Imagem</a></li>
-                                            <li><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> Energia</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                 <?= anchor('welcome/index', '<i class="fa fa-picture-o" aria-hidden="true"></i> Galeria', array('class' => '')); ?>
                             </li>
                         </ul>
                     </div>

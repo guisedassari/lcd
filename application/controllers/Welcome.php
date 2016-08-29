@@ -8,12 +8,14 @@ class Welcome extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('galerias_model');
-       $this->load->library('Myclass');
+        $this->load->library('Myclass');
     }
 
     public function index() {
+        $galerias = $this->galerias_model->visualizar_all();
+
         $this->load->view('painel/menus/cabecalho');
-        $this->load->view('painel/galerias/corporativo/index');
+        $this->load->view('painel/galerias/index', compact('galerias'));
         $this->load->view('painel/menus/rodape');
     }
 
@@ -26,7 +28,7 @@ class Welcome extends CI_Controller {
             redirect('#');
         }
         $this->load->view('painel/menus/cabecalho');
-        $this->load->view('painel/galerias/corporativo/add');
+        $this->load->view('painel/galerias/add');
         $this->load->view('painel/menus/rodape');
     }
 
@@ -67,7 +69,7 @@ class Welcome extends CI_Controller {
             $imagem = array('imagem' => $this->upload->data('file_name'));
             $dados = array_merge($imagem, $form_data);
             $teste = $path . $dados['imagem'];
-           $this->myclass->imgsize($teste);
+            $this->myclass->imgsize($teste);
             if ($dados != null) {
                 $this->galerias_model->save($dados);
                 $this->session->set_flashdata("success", "Imagem salva com sucesso");
@@ -77,4 +79,26 @@ class Welcome extends CI_Controller {
             $this->output->set_status_header('200');
         }
     }
+
+    public function delete($id_galeria = null, $imagem = null) {
+        $this->load->helper('file');
+        $form_data = $this->galerias_model->visualizar_id($id_galeria);
+        $caminho = $form_data['categoria'] . "/" . $form_data['subcategoria'] . "/" . $form_data['imagem'];
+        $path = base_url('uploads/' . $caminho);
+        xdebbug($form_data);
+        //debbug($path);
+        echo realpath($path);
+        delete_files($path);
+        $arquivo = '/var/www/html/lcd/uploads/social/iluminacao/' . $imagem;
+        if (!@unlink($arquivo)) {
+            echo ("Erro ao deletar $arquivo");
+        } else {
+            echo ("Deletado $arquivo com sucesso!");
+        }
+
+        $this->galerias_model->deletar($id_galeria);
+        $this->session->set_flashdata("success", "Imagem deletado com sucesso");
+        redirect('welcome/index');
+    }
+
 }
