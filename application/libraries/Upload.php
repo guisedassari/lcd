@@ -1,33 +1,11 @@
 <?php
 
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Upload {
 
     public function __construct() {
-        parent::__construct();
-        $this->load->model('galerias_model');
-       $this->load->library('Myclass');
-    }
-
-    public function index() {
-        $this->load->view('painel/menus/cabecalho');
-        $this->load->view('painel/galerias/corporativo/index');
-        $this->load->view('painel/menus/rodape');
-    }
-
-    public function add($dados = null) {
-        $dados = $this->input->post();
-
-        if ($dados != null) {
-            $this->galerias_model->save();
-            $this->session->set_flashdata("success", "Imagem salva com sucesso");
-            redirect('#');
-        }
-        $this->load->view('painel/menus/cabecalho');
-        $this->load->view('painel/galerias/corporativo/add');
-        $this->load->view('painel/menus/rodape');
+        
     }
 
     public function Upload() {
@@ -67,7 +45,7 @@ class Welcome extends CI_Controller {
             $imagem = array('imagem' => $this->upload->data('file_name'));
             $dados = array_merge($imagem, $form_data);
             $teste = $path . $dados['imagem'];
-           $this->myclass->imgsize($teste);
+            $this->myclass->imgsize($teste);
             if ($dados != null) {
                 $this->galerias_model->save($dados);
                 $this->session->set_flashdata("success", "Imagem salva com sucesso");
@@ -77,4 +55,5 @@ class Welcome extends CI_Controller {
             $this->output->set_status_header('200');
         }
     }
+
 }
