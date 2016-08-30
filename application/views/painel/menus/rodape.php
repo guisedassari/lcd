@@ -22,7 +22,38 @@
 <!-- Custom Theme JavaScript -->
 <script src="<?= base_url('assets/dist/js/sb-admin-2.js') ?>"></script>
 <script src="<?= base_url('assets/js/dropzone.js') ?>"></script>
+<!-- DataTables JavaScript -->
+    <script src="<?= base_url('assets/vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
+    <script src="<?= base_url('assets/vendor/datatables-plugins/dataTables.bootstrap.min.js')?>"></script>
+    <script src="<?= base_url('assets/vendor/datatables-responsive/dataTables.responsive.js')?>"></script>
 
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    
+    <script>
+    $(document).ready(function () {
+
+        $('#dataTables-example').DataTable({
+            "responsive": true,
+            "searching": false,
+            "ordering": false,
+            "language": {
+                "lengthMenu": "Exibir _MENU_ por página",
+                "zeroRecords": "Nenhum resultado encontrado.",
+                "info": "Mostrando _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum dado disponível",
+                "infoFiltered": "(filtrado de um total de _MAX_ dados)",
+                "search": "Pesquisar",
+                "paginate": {
+                    "first": "Primeira página",
+                    "last": "Ultima página",
+                    "next": "Próximo",
+                    "previous": "Anterior"
+                }
+            }
+        });
+    });
+</script>
 </body>
 
 

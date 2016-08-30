@@ -11,6 +11,7 @@
         <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
         <!-- MetisMenu CSS -->
         <link href="<?= base_url('assets/vendor/metisMenu/metisMenu.min.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('assets/vendor/datatables-responsive/dataTables.responsive.css') ?>" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?= base_url('assets/dist/css/sb-admin-2.css') ?>" rel="stylesheet">
         <link href="<?= base_url('assets/dist/css/my_style.css') ?>" rel="stylesheet">
@@ -71,9 +72,9 @@
                             <li>
                                 <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
-                            
+
                             <li>
-                                 <?= anchor('welcome/index', '<i class="fa fa-picture-o" aria-hidden="true"></i> Galeria', array('class' => '')); ?>
+                                <?= anchor('welcome/index', '<i class="fa fa-picture-o" aria-hidden="true"></i> Galeria', array('class' => '')); ?>
                             </li>
                         </ul>
                     </div>
@@ -82,7 +83,7 @@
             <!-- Page Content -->
             <div id="page-wrapper">
                 <div class="container-fluid">
-                    
+
 
 
 

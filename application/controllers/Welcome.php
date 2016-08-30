@@ -47,7 +47,7 @@ class Welcome extends CI_Controller {
         //define os tipos de arquivos suportados
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
         //define o tamanho máximo do arquivo (em Kb)
-        $config['max_size'] = '5000';
+        $config['max_size'] = '10000';
         //Criptografa o nome da imagem para nao se repetir
         $config['encrypt_name'] = TRUE;
 
@@ -81,20 +81,14 @@ class Welcome extends CI_Controller {
     }
 
     public function delete($id_galeria = null, $imagem = null) {
-        $this->load->helper('file');
         $form_data = $this->galerias_model->visualizar_id($id_galeria);
-        $caminho = $form_data['categoria'] . "/" . $form_data['subcategoria'] . "/" . $form_data['imagem'];
-        $path = base_url('uploads/' . $caminho);
-        xdebbug($form_data);
-        //debbug($path);
-        echo realpath($path);
-        delete_files($path);
-        $arquivo = '/var/www/html/lcd/uploads/social/iluminacao/' . $imagem;
-        if (!@unlink($arquivo)) {
-            echo ("Erro ao deletar $arquivo");
-        } else {
-            echo ("Deletado $arquivo com sucesso!");
-        }
+        $caminho = $form_data['categoria'] . "/" . $form_data['subcategoria'] . "/";
+        
+        $arquivo = '/var/www/html/lcd/uploads/' . $caminho . $form_data['imagem'];
+        $arquivo_thumb = '/var/www/html/lcd/uploads/' . $caminho . $imagem;
+        
+        unlink($arquivo);
+        unlink($arquivo_thumb);
 
         $this->galerias_model->deletar($id_galeria);
         $this->session->set_flashdata("success", "Imagem deletado com sucesso");
