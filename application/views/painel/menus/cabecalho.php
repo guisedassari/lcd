@@ -16,16 +16,15 @@ if (!($_SESSION['usuario_logado'])) {
         <!-- Bootstrap Core CSS -->
         <link href="<?= base_url('assets/painel/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
         <!-- MetisMenu CSS -->
-<!--        <link href="<?= base_url('assets/painel/vendor/metisMenu/metisMenu.min.css') ?>" rel="stylesheet">-->
+        <!--<link href="<?= base_url('assets/painel/vendor/metisMenu/metisMenu.min.css') ?>" rel="stylesheet">-->
         <link href="<?= base_url('assets/painel/vendor/datatables-responsive/dataTables.responsive.css') ?>" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?= base_url('assets/painel/dist/css/sb-admin-2.css') ?>" rel="stylesheet">
         <link href="<?= base_url('assets/painel/dist/css/my_style.css') ?>" rel="stylesheet">
         <!-- Morris Charts CSS -->
-<!--        <link href="<?= base_url('assets/painel/vendor/morrisjs/morris.css') ?>" rel="stylesheet">-->
+        <!--<link href="<?= base_url('assets/painel/vendor/morrisjs/morris.css') ?>" rel="stylesheet">-->
         <!-- Custom Fonts -->
         <link href="<?= base_url('assets/painel/vendor/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet" type="text/css">
-
     </head>
     <body>
         <div id="wrapper">
@@ -47,7 +46,7 @@ if (!($_SESSION['usuario_logado'])) {
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li>
-                                <a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                <?= anchor('logout', '<i class="fa fa-sign-out" aria-hidden="true"></i> Logout', array('class' => '')); ?>
                             </li>
                         </ul>
                     </li>
