@@ -1,3 +1,9 @@
+<?php
+if (!($_SESSION['usuario_logado'])) {
+    $this->session->set_flashdata("danger", "Você deve se logar primeiro");
+    redirect('login');
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -42,14 +48,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li>
-                                <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                <a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
                         </ul>
                     </li>

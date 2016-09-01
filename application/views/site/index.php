@@ -7,7 +7,6 @@
         <meta name="author" content="Absoluta Cine" />
         <link rel="icon" type="image/png" href="<?= base_url('assets/site/img/favicon.png') ?>">
         <!-- CSS -->
-
         <link rel="stylesheet" type="text/css" href="<?= base_url('assets/site/css/style.css') ?>"/>
         <link rel="stylesheet" type="text/css" href="<?= base_url('assets/site/css/animate.css') ?>"/>
         <link rel="stylesheet" type="text/css" href="<?= base_url('assets/site/css/jquery.fullPage.css') ?>"/>
@@ -15,7 +14,6 @@
         <link rel="stylesheet" type="text/css" href="<?= base_url('assets/site/js/fancybox/jquery.fancybox.css') ?>"/>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-
     </head>
     <body onload="init()">
         <!-- Loader -->
@@ -211,24 +209,17 @@
                                         <?php
                                         foreach ($galerias as $galeria) :
                                             if ($galeria['categoria'] == 'corporativo') :
-                                                if ($galeria['subcategoria'] == 'iluminacao') {
-                                                    $imagem = (explode('.', $galeria['imagem']));
-                                                    $imagem = $imagem[0] . "_thumb." . $imagem[1];
+                                                if ($galeria['subcategoria'] == 'iluminacao') :
                                                     $caminho = $galeria['categoria'] . "/" . $galeria['subcategoria'] . "/";
-                                                    //xdebbug($caminho);
                                                     ?>
                                                     <li class="element-item item1 item3" data-category="transition">
-                                                    <?= img(array('src' => base_url("uploads/" . $caminho . $imagem), 'class' => '')) ?>
+                                                        <?= img(array('src' => base_url("uploads/" . $caminho . $galeria['imagem']), 'class' => 'galeria-img')) ?>
                                                     </li>
-                                                <?php }
-                                                ?>
-
-                                                <?php
+                                                    <?php
+                                                endif;
                                             endif;
                                         endforeach;
                                         ?>
-
-
                                     </ul>
                                 </div>
                             </div>
@@ -256,18 +247,17 @@
                                         <?php
                                         foreach ($galerias as $galeria) :
                                             if ($galeria['categoria'] == 'corporativo') :
-                                                if ($galeria['subcategoria'] == 'sonorizacao') {
-                                                    $imagem = (explode('.', $galeria['imagem']));
-                                                    $imagem = $imagem[0] . "_thumb." . $imagem[1];
+                                                if ($galeria['subcategoria'] == 'sonorizacao') :
                                                     $caminho = $galeria['categoria'] . "/" . $galeria['subcategoria'] . "/";
-                                                    xdebbug($caminho);
-                                                }
-                                                ?>
-                                                <?php
+                                                    ?>
+                                                    <li class="element-item item1 item3" data-category="transition">
+                                                        <?= img(array('src' => base_url("uploads/" . $caminho . $galeria['imagem']), 'class' => 'galeria-img')) ?>
+                                                    </li>
+                                                    <?php
+                                                endif;
                                             endif;
                                         endforeach;
                                         ?>
-
                                     </ul>
                                 </div>
                             </div>
@@ -295,18 +285,17 @@
                                         <?php
                                         foreach ($galerias as $galeria) :
                                             if ($galeria['categoria'] == 'corporativo') :
-                                                if ($galeria['subcategoria'] == 'imagem') {
-                                                    $imagem = (explode('.', $galeria['imagem']));
-                                                    $imagem = $imagem[0] . "_thumb." . $imagem[1];
+                                                if ($galeria['subcategoria'] == 'imagem') :
                                                     $caminho = $galeria['categoria'] . "/" . $galeria['subcategoria'] . "/";
-                                                    xdebbug($caminho);
-                                                }
-                                                ?>
-                                                <?php
+                                                    ?>
+                                                    <li class="element-item item1 item3" data-category="transition">
+                                                        <?= img(array('src' => base_url("uploads/" . $caminho . $galeria['imagem']), 'class' => 'galeria-img')) ?>
+                                                    </li>
+                                                    <?php
+                                                endif;
                                             endif;
                                         endforeach;
                                         ?>
-
                                     </ul>
                                 </div>
                             </div>
@@ -334,14 +323,14 @@
                                         <?php
                                         foreach ($galerias as $galeria) :
                                             if ($galeria['categoria'] == 'corporativo') :
-                                                if ($galeria['subcategoria'] == 'energia') {
-                                                    $imagem = (explode('.', $galeria['imagem']));
-                                                    $imagem = $imagem[0] . "_thumb." . $imagem[1];
+                                                if ($galeria['subcategoria'] == 'energia') :
                                                     $caminho = $galeria['categoria'] . "/" . $galeria['subcategoria'] . "/";
-                                                    xdebbug($caminho);
-                                                }
-                                                ?>
-                                                <?php
+                                                    ?>
+                                                    <li class="element-item item1 item3" data-category="transition">
+                                                        <?= img(array('src' => base_url("uploads/" . $caminho . $galeria['imagem']), 'class' => 'galeria-img')) ?>
+                                                    </li>
+                                                    <?php
+                                                endif;
                                             endif;
                                         endforeach;
                                         ?>
@@ -369,7 +358,7 @@
                         <div class="box2 btn_services absolute btn_iluminacao animate2">
                             <div class="greater h-full pos-tl relative">
                                 <div class="greatimg h-full absolute">
-                                    <img class="absolute transition_slow" src="assets/img/servicos/social/iluminacao.jpg" alt="">
+                                    <img class="absolute transition_slow" src="<?= base_url('assets/site/img/servicos/social/iluminacao.jpg') ?>" alt="">
                                 </div>
                             </div>
                             <div class="subtitle transition_slow center_aligner absolute">
@@ -381,7 +370,7 @@
                         <div class="box2 btn_services absolute btn_som animate4">
                             <div class="greater h-full pos-tl relative">
                                 <div class="greatimg h-full absolute">
-                                    <img class="absolute transition_slow" src="assets/img/servicos/social/som.jpg" alt="">
+                                    <img class="absolute transition_slow" src="<?= base_url('assets/site/img/servicos/social/som.jpg') ?>" alt="">
                                 </div>
                             </div>
                             <div class="subtitle transition_slow center_aligner absolute">
@@ -393,7 +382,7 @@
                         <div class="box2 btn_services absolute btn_imagem animate1">
                             <div class="greater h-full pos-tl relative">
                                 <div class="greatimg h-full absolute">
-                                    <img class="absolute transition_slow" src="assets/img/servicos/social/imagem.jpg" alt="">
+                                    <img class="absolute transition_slow" src="<?= base_url('assets/site/img/servicos/social/imagem.jpg') ?>" alt="">
                                 </div>
                             </div>
                             <div class="subtitle transition_slow center_aligner absolute">
@@ -405,7 +394,7 @@
                         <div class="box2 btn_services absolute btn_energia animate3">
                             <div class="greater h-full pos-tl relative">
                                 <div class="greatimg h-full absolute">
-                                    <img class="absolute transition_slow" src="assets/img/servicos/social/energia.jpg" alt="">
+                                    <img class="absolute transition_slow" src="<?= base_url('assets/site/img/servicos/social/energia.jpg') ?>" alt="">
                                 </div>
                             </div>
                             <div class="subtitle transition_slow center_aligner absolute">
@@ -433,84 +422,22 @@
                                 <p class="center_aligner">
                                     Com os projetos de iluminação, um lugar comum se transforma em um ambiente especial, aconchegante, romântico e inesquecível.
                                 </p>
-                                <div class="left sidebar pc-25">
-                                    <h6>
-                                        Os Melhores Equipamentos para o seu EVENTO
-                                    </h6>
-                                    <div id="filters-5" class="button-group">
-                                        <button class="transition is-checked" data-filter="*">
-                                            Mostrar tudo
-                                        </button>
-                                        <button class="transition" data-filter=".item1">
-                                            Item 1
-                                        </button>
-                                        <button class="transition" data-filter=".item2">
-                                            Item 2
-                                        </button>
-                                        <button class="transition" data-filter=".item3">
-                                            Item 3
-                                        </button>
-                                        <button class="transition" data-filter=".item4">
-                                            Item 4
-                                        </button>
-                                        <button class="transition" data-filter=".item5">
-                                            Item 5
-                                        </button>
-                                        <button class="transition" data-filter=".item6">
-                                            Item 6
-                                        </button>
-                                    </div>
-                                </div>
                                 <div class="left pc-75 right_content">
                                     <ul class="isotope-5">
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item3 item5" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item4 item6" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item5 item1" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item6 item2" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item3 item5" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item4 item6" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item5 item1" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item6 item2" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
+                                        <?php
+                                        foreach ($galerias as $galeria) :
+                                            if ($galeria['categoria'] == 'social') :
+                                                if ($galeria['subcategoria'] == 'iluminacao') :
+                                                    $caminho = $galeria['categoria'] . "/" . $galeria['subcategoria'] . "/";
+                                                    ?>
+                                                    <li class="element-item item1 item3" data-category="transition">
+                                                        <?= img(array('src' => base_url("uploads/" . $caminho . $galeria['imagem']), 'class' => 'galeria-img')) ?>
+                                                    </li>
+                                                    <?php
+                                                endif;
+                                            endif;
+                                        endforeach;
+                                        ?>
                                     </ul>
                                 </div>
                             </div>
@@ -532,84 +459,22 @@
                                 <p class="center_aligner">
                                     A sonorização é parte fundamental do evento. É através da análise do ambiente que vamos fazer um projeto de acordo com o seu evento para que o som do Show, Palestra ou Evento Social possa chegar até os convidados com total nitidez.
                                 </p>
-                                <div class="left sidebar pc-25">
-                                    <h6>
-                                        Os Melhores Equipamentos para o seu EVENTO
-                                    </h6>
-                                    <div id="filters-6" class="button-group">
-                                        <button class="transition is-checked" data-filter="*">
-                                            Mostrar tudo
-                                        </button>
-                                        <button class="transition" data-filter=".item1">
-                                            Item 1
-                                        </button>
-                                        <button class="transition" data-filter=".item2">
-                                            Item 2
-                                        </button>
-                                        <button class="transition" data-filter=".item3">
-                                            Item 3
-                                        </button>
-                                        <button class="transition" data-filter=".item4">
-                                            Item 4
-                                        </button>
-                                        <button class="transition" data-filter=".item5">
-                                            Item 5
-                                        </button>
-                                        <button class="transition" data-filter=".item6">
-                                            Item 6
-                                        </button>
-                                    </div>
-                                </div>
                                 <div class="left pc-75 right_content">
                                     <ul class="isotope-6">
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item3 item5" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item4 item6" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item5 item1" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item6 item2" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item3 item5" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item4 item6" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item5 item1" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item6 item2" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
+                                        <?php
+                                        foreach ($galerias as $galeria) :
+                                            if ($galeria['categoria'] == 'social') :
+                                                if ($galeria['subcategoria'] == 'sonorizacao') :
+                                                    $caminho = $galeria['categoria'] . "/" . $galeria['subcategoria'] . "/";
+                                                    ?>
+                                                    <li class="element-item item1 item3" data-category="transition">
+                                                        <?= img(array('src' => base_url("uploads/" . $caminho . $galeria['imagem']), 'class' => 'galeria-img')) ?>
+                                                    </li>
+                                                    <?php
+                                                endif;
+                                            endif;
+                                        endforeach;
+                                        ?>
                                     </ul>
                                 </div>
                             </div>
@@ -631,85 +496,23 @@
                                 <p class="center_aligner">
                                     Faça a diferença em seu evento com os nossos projetos de mapping, vídeo wall, projetores de alta potencia e super definição. Transformando qualquer ambiente com projetos personalizados impressionando os seus convidados.
                                 </p>
-                                <div class="left sidebar pc-25">
-                                    <h6>
-                                        Os Melhores Equipamentos para o seu EVENTO
-                                    </h6>
-                                    <div id="filters-7" class="button-group">
-                                        <button class="transition is-checked" data-filter="*">
-                                            Mostrar tudo
-                                        </button>
-                                        <button class="transition" data-filter=".item1">
-                                            Item 1
-                                        </button>
-                                        <button class="transition" data-filter=".item2">
-                                            Item 2
-                                        </button>
-                                        <button class="transition" data-filter=".item3">
-                                            Item 3
-                                        </button>
-                                        <button class="transition" data-filter=".item4">
-                                            Item 4
-                                        </button>
-                                        <button class="transition" data-filter=".item5">
-                                            Item 5
-                                        </button>
-                                        <button class="transition" data-filter=".item6">
-                                            Item 6
-                                        </button>
-                                    </div>
-                                </div>
+
                                 <div class="left pc-75 right_content">
                                     <ul class="isotope-7">
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item3 item5" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item4 item6" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item5 item1" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item6 item2" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item3 item5" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item4 item6" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item5 item1" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item6 item2" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-
+                                        <?php
+                                        foreach ($galerias as $galeria) :
+                                            if ($galeria['categoria'] == 'social') :
+                                                if ($galeria['subcategoria'] == 'imagem') :
+                                                    $caminho = $galeria['categoria'] . "/" . $galeria['subcategoria'] . "/";
+                                                    ?>
+                                                    <li class="element-item item1 item3" data-category="transition">
+                                                        <?= img(array('src' => base_url("uploads/" . $caminho . $galeria['imagem']), 'class' => 'galeria-img')) ?>
+                                                    </li>
+                                                    <?php
+                                                endif;
+                                            endif;
+                                        endforeach;
+                                        ?>
                                     </ul>
                                 </div>
                             </div>
@@ -731,84 +534,22 @@
                                 <p class="center_aligner">
                                     Geradores fornecem total segurança para seu evento. Assim, você tem a garantia de não ficar no escuro na hora em que os refletores farão você brilhar.
                                 </p>
-                                <div class="left sidebar pc-25">
-                                    <h6>
-                                        Os Melhores Equipamentos para o seu EVENTO
-                                    </h6>
-                                    <div id="filters-8" class="button-group">
-                                        <button class="transition is-checked" data-filter="*">
-                                            Mostrar tudo
-                                        </button>
-                                        <button class="transition" data-filter=".item1">
-                                            Item 1
-                                        </button>
-                                        <button class="transition" data-filter=".item2">
-                                            Item 2
-                                        </button>
-                                        <button class="transition" data-filter=".item3">
-                                            Item 3
-                                        </button>
-                                        <button class="transition" data-filter=".item4">
-                                            Item 4
-                                        </button>
-                                        <button class="transition" data-filter=".item5">
-                                            Item 5
-                                        </button>
-                                        <button class="transition" data-filter=".item6">
-                                            Item 6
-                                        </button>
-                                    </div>
-                                </div>
                                 <div class="left pc-75 right_content">
                                     <ul class="isotope-8">
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item3 item5" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item4 item6" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item5 item1" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item6 item2" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item3 item5" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
-                                        <li class="element-item item4 item6" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item2 item4" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-04.png" alt="">
-                                        </li>
-                                        <li class="element-item item5 item1" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-01.png" alt="">
-                                        </li>
-                                        <li class="element-item item6 item2" data-category="metalloid">
-                                            <img src="assets/img/galeria/gal-img-02.png" alt="">
-                                        </li>
-                                        <li class="element-item item1 item3" data-category="transition">
-                                            <img src="assets/img/galeria/gal-img-03.png" alt="">
-                                        </li>
+                                        <?php
+                                        foreach ($galerias as $galeria) :
+                                            if ($galeria['categoria'] == 'social') :
+                                                if ($galeria['subcategoria'] == 'energia') :
+                                                    $caminho = $galeria['categoria'] . "/" . $galeria['subcategoria'] . "/";
+                                                    ?>
+                                                    <li class="element-item item1 item3" data-category="transition">
+                                                        <?= img(array('src' => base_url("uploads/" . $caminho . $galeria['imagem']), 'class' => 'galeria-img')) ?>
+                                                    </li>
+                                                    <?php
+                                                endif;
+                                            endif;
+                                        endforeach;
+                                        ?>
                                     </ul>
                                 </div>
                             </div>

@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="text-right">
-                <?= anchor('welcome/add', 'Adicionar', array('class' => 'btn btn-primary')); ?>
+                <?= anchor('adicionar', 'Adicionar', array('class' => 'btn btn-primary')); ?>
             </div>
             <br>
         </div>

@@ -386,3 +386,8 @@ position:absolute;top:30%;left:50%;margin-left:-375px;z-index:50;}
 .accordian li img{transition:all 0.5s}
 .accordian li:hover img{margin-left:0}
 .accordian li img{display:block}
+.galeria-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
