@@ -2,28 +2,28 @@
     font-family:'helvetica';
     src: url('../fonts/helvetica.eot');
     src: url('../fonts/helvetica.eot') format('embedded-opentype'),
-         url('../fonts/helvetica.woff2') format('woff2'),
-         url('../fonts/helvetica.woff') format('woff'),
-         url('../fonts/helvetica.ttf') format('truetype'),
-         url('../fonts/helvetica.svg#helvetica') format('svg');
+        url('../fonts/helvetica.woff2') format('woff2'),
+        url('../fonts/helvetica.woff') format('woff'),
+        url('../fonts/helvetica.ttf') format('truetype'),
+        url('../fonts/helvetica.svg#helvetica') format('svg');
 }
 @font-face {
     font-family:'MyriadBold';
     src: url('../fonts/MyriadProBold.eot');
     src: url('../fonts/MyriadProBold.eot') format('embedded-opentype'),
-         url('../fonts/MyriadProBold.woff2') format('woff2'),
-         url('../fonts/MyriadProBold.woff') format('woff'),
-         url('../fonts/MyriadProBold.ttf') format('truetype'),
-         url('../fonts/MyriadProBold.svg#MyriadProBold') format('svg');
+        url('../fonts/MyriadProBold.woff2') format('woff2'),
+        url('../fonts/MyriadProBold.woff') format('woff'),
+        url('../fonts/MyriadProBold.ttf') format('truetype'),
+        url('../fonts/MyriadProBold.svg#MyriadProBold') format('svg');
 }
 @font-face {
     font-family:'MyriadRegular';
     src: url('../fonts/MyriadProRegular.eot');
     src: url('../fonts/MyriadProRegular.eot') format('embedded-opentype'),
-         url('../fonts/MyriadProRegular.woff2') format('woff2'),
-         url('../fonts/MyriadProRegular.woff') format('woff'),
-         url('../fonts/MyriadProRegular.ttf') format('truetype'),
-         url('../fonts/MyriadProRegular.svg#MyriadProRegular') format('svg');
+        url('../fonts/MyriadProRegular.woff2') format('woff2'),
+        url('../fonts/MyriadProRegular.woff') format('woff'),
+        url('../fonts/MyriadProRegular.ttf') format('truetype'),
+        url('../fonts/MyriadProRegular.svg#MyriadProRegular') format('svg');
 }
 /* Reset */
 *{margin:0;padding:0;outline:0;list-style:none}
@@ -133,6 +133,8 @@ p strong{font-size:15px;}
 .pc-75{width:75%;}
 .pc-90{width:90%;}
 .pc-100{width:100%;}
+.bl-0{border-left:0!important}
+.br-0{border-right:0!important}
 /* Padrões */
 .bg{width:100%;height:100%;position:absolute;top:0;left:0;background-size:100% !important;background-attachment:fixed !important;}
 
@@ -140,7 +142,7 @@ p strong{font-size:15px;}
 #loader{position:fixed;z-index:1000;background:rgb(255,255,255);width:100%;height:100%;}
 .spinner{width:40px;height:40px;margin:0 auto;}
 .double-bounce1,.double-bounce2{width:100%;height:100%;border-radius:50%;background-color:#013889;opacity:0.6;top:0;left:0;  
--webkit-animation: bounce 2.0s infinite ease-in-out;animation: bounce 2.0s infinite ease-in-out;}
+                                -webkit-animation: bounce 2.0s infinite ease-in-out;animation: bounce 2.0s infinite ease-in-out;}
 .double-bounce2{-webkit-animation-delay:-1.0s;animation-delay:-1.0s;}
 .load_inner{left:50%;top:50%;width:70px;height:60px;margin:-30px auto auto -35px}
 #loader .txt{margin-top:5px;}
@@ -200,14 +202,14 @@ header #menu li a:hover, .op_hover:hover{opacity:.6;-webkit-opacity:.6;-moz-opac
 /* Sessão 1 Banner Fim */
 /* Sessão 2 Somos Assim */
 #somos{z-index:9;}
-#somos .bg{background:url('../img/bg/bg-2.jpg');z-index}
+#somos .bg{background:url('../img/bg/bg-2.jpg');}
 #somos .inner{position:absolute;width:640px;height:195px;left:50%;top:50%;margin-left:-320px;margin-top:-97px;}
 #somos .logo{background:url('../img/sprite.png') no-repeat -128px 0;width:124px;height:122px;}
 #somos .som-e-ilu{background:url('../img/sprite.png') no-repeat -86px -125px;width:208px;height:27px;}
 #somos .prof{background:url('../img/sprite.png') no-repeat -114px -159px;width:151px;height:19px;}
 #somos .logo, #somos .som-e-ilu{margin-bottom:10px;}
 /*#somos p{max-width:245px;}*/
-#trabalhamos h2 strong{max-width:230px;}
+#trabalhamos h2 strong{max-width:234px;}
 #contact h2{max-width:510px;}
 /* Sessão 2 Somos Assim Fim */
 /* Sessão 3 Serviços */
@@ -229,8 +231,8 @@ header #menu li a:hover, .op_hover:hover{opacity:.6;-webkit-opacity:.6;-moz-opac
     -o-filter: grayscale(0%);
     filter: grayscale(0%);
     filter: url(../img/grayscale.svg);filter: gray;
-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
-opacity:.3;-moz-opacity:.3;-webkit-opacity:.3;-o-opacity:.3;}
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    opacity:.3;-moz-opacity:.3;-webkit-opacity:.3;-o-opacity:.3;}
 
 .corporativo_bg.widther_imp .bgs,.social_bg.widther_imp .bgs{
     -webkit-filter: grayscale(0%) !important;
@@ -239,8 +241,8 @@ opacity:.3;-moz-opacity:.3;-webkit-opacity:.3;-o-opacity:.3;}
     -o-filter: grayscale(0%) !important;
     filter: grayscale(0%) !important;
     filter: url(../img/grayscale.svg);filter: gray;
-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
-opacity:.3;-moz-opacity:.3;-webkit-opacity:.3;-o-opacity:.3;}
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    opacity:.3;-moz-opacity:.3;-webkit-opacity:.3;-o-opacity:.3;}
 .bgs{width:100%;height:100%;background-size:cover !important;}
 #trabalhamos .inner{width:670px;left:50%;top:50%;margin:-91px auto auto -335px;z-index:104;position:absolute;}
 #trabalhamos p{max-width:660px;}
@@ -257,7 +259,7 @@ opacity:.3;-moz-opacity:.3;-webkit-opacity:.3;-o-opacity:.3;}
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
     filter: url(../img/grayscale.svg);filter: gray;
-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */}
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */}
 .bgs{opacity:.3;-moz-opacity:.3;-webkit-opacity:.3;-o-opacity:.3;}
 .bgs.greyscale{opacity:.15;-moz-opacity:.15;-webkit-opacity:.15;-o-opacity:.15;}
 /* Sessão 3 Serviços Fim */
@@ -361,26 +363,26 @@ a[href^="http://maps.google.com/maps"],.gm-style-cc,.gmnoprint a, .gmnoprint spa
 /* Rodapé - Mapa Canvas Fim */
 /* Animações */
 @-webkit-keyframes bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
 }
 @keyframes bounce {
-  0%, 100% { 
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% { 
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
+    0%, 100% { 
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% { 
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
 }
 .accordian{width:750px;height:350px;overflow:hidden;box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.35);
-    -webkit-box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.35);-moz-box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.35);
-position:absolute;top:30%;left:50%;margin-left:-375px;z-index:50;}
+           -webkit-box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.35);-moz-box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.35);
+           position:absolute;top:30%;left:50%;margin-left:-375px;z-index:50;}
 .accordian ul{width:750px}
 .accordian li{position:relative;display:block;width:25%;
-    float:left;box-shadow:0 0 25px 10px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow:0 0 25px 10px rgba(0, 0, 0, 0.5);-moz-box-shadow:0 0 25px 10px rgba(0, 0, 0, 0.5);transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;
-    overflow:hidden;cursor:pointer;}
+              float:left;box-shadow:0 0 25px 10px rgba(0, 0, 0, 0.5);
+              -webkit-box-shadow:0 0 25px 10px rgba(0, 0, 0, 0.5);-moz-box-shadow:0 0 25px 10px rgba(0, 0, 0, 0.5);transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;
+              overflow:hidden;cursor:pointer;}
 .accordian ul:hover li{width:10%}
 .accordian ul li:hover{width:70%}
 .accordian li img{transition:all 0.5s}
@@ -390,4 +392,34 @@ position:absolute;top:30%;left:50%;margin-left:-375px;z-index:50;}
     width: 140px;
     height: 140px;
     object-fit: cover;
+}
+#content {
+    overflow: hidden;
+    width:100%;
+    height:230px;
+    padding:10px;
+}
+#content strong{
+    font-weight:bold;
+}
+#content p+p{
+    margin-top:30px;
+}
+#top, #bottom {
+    border:1px solid rgba(255,255,255,.8);
+    background:rgba(255,255,255,.1);
+    color:#fff;
+    text-align: center;
+    padding:5px;
+    cursor:pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#top:active,#top:focus,
+#bottom:active,#bottom:focus{
+    border:1px solid rgba(255,255,255,.4);
 }
