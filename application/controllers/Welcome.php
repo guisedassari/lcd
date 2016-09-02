@@ -69,6 +69,7 @@ class Welcome extends CI_Controller {
             $imagem = array('imagem' => $this->upload->data('file_name'));
             $dados = array_merge($imagem, $form_data);
             $teste = $path . $dados['imagem'];
+            //Diminui o tamanho da imagem
             $this->myclass->imgsize($teste);
             if ($dados != null) {
                 $this->galerias_model->save($dados);
@@ -83,15 +84,28 @@ class Welcome extends CI_Controller {
     public function delete($id_galeria = null, $imagem = null) {
         $form_data = $this->galerias_model->visualizar_id($id_galeria);
         $caminho = $form_data['categoria'] . "/" . $form_data['subcategoria'] . "/";
-        
+
         $arquivo = '/var/www/html/lcd/uploads/' . $caminho . $form_data['imagem'];
         $arquivo_thumb = '/var/www/html/lcd/uploads/' . $caminho . $imagem;
-        
+
         unlink($arquivo);
         unlink($arquivo_thumb);
 
         $this->galerias_model->deletar($id_galeria);
         $this->session->set_flashdata("success", "Imagem deletado com sucesso");
+        redirect('welcome/index');
+    }
+
+    public function compressoes($id_galeria = null) {
+        $this->load->helper('file');
+        $form_data = $this->galerias_model->visualizar_id($id_galeria);
+        $caminho = $form_data['categoria'] . "/" . $form_data['subcategoria'] . "/";
+        $arquivo = '/var/www/html/lcd/uploads/' . $caminho . $form_data['imagem'];
+
+        $img_name = $arquivo;
+        $string = get_file_info($arquivo);
+        debbug(formatSizeUnits($string['size']));
+        $this->myclass->TynePNG($img_name);
         redirect('welcome/index');
     }
 

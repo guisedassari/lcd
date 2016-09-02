@@ -29,7 +29,11 @@
         $imagem = $imagem[0] . "_thumb." . $imagem[1];
         $caminho = $galeria['categoria'] . "/" . $galeria['subcategoria'] . "/";
         $this->table->add_row(
-                img(array('src' => base_url("uploads/" . $caminho . $imagem), 'class' => 'img-responsive')), $galeria['label'], $galeria['categoria'], $galeria['subcategoria'], anchor("welcome/delete/{$galeria['id_galeria']}/{$imagem}/{$galeria['imagem']}", '<i class="fa fa-trash" aria-hidden="true"></i>', array('class' => 'btn btn-danger')));
+                img(array('src' => base_url("uploads/" . $caminho . $imagem), 'class' => 'img-responsive')),
+                $galeria['label'], 
+                $galeria['categoria'], 
+                $galeria['subcategoria'], 
+                anchor("welcome/delete/{$galeria['id_galeria']}/{$imagem}/{$galeria['imagem']}", '<i class="fa fa-trash" aria-hidden="true"></i>', array('class' => 'btn btn-danger')));
     }
     echo $this->table->generate();
     ?>
