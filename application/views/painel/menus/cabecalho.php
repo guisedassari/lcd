@@ -25,6 +25,7 @@ if (!($_SESSION['usuario_logado'])) {
         <!--<link href="<?= base_url('assets/painel/vendor/morrisjs/morris.css') ?>" rel="stylesheet">-->
         <!-- Custom Fonts -->
         <link href="<?= base_url('assets/painel/vendor/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet" type="text/css">
+        <link href="<?= base_url('assets/painel/plugins/jasny-bootstrap/css/jasny-bootstrap.min.css') ?>" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div id="wrapper">

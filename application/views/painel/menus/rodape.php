@@ -16,6 +16,8 @@
 <script src="<?= base_url('assets/painel/data/morris-data.js') ?>"></script>-->
 <!--Custom Theme JavaScript -->
 <script src="<?= base_url('assets/painel/dist/js/sb-admin-2.js') ?>"></script>
+<script src="<?= base_url('assets/painel/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js') ?>"></script>
+
 <!--DataTables JavaScript -->
     <script src="<?= base_url('assets/painel/vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
     <script src="<?= base_url('assets/painel/vendor/datatables-plugins/dataTables.bootstrap.min.js')?>"></script>
